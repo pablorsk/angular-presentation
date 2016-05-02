@@ -3,16 +3,16 @@
 
 body {
     font-family: 'Droid Serif';
-    font-size: 20px;
+    font-size: 28px;
 }
 h1, h2, h3 {
     font-family: 'Yanone Kaffeesatz';
     font-weight: 400;
     margin-bottom: 0;
 }
-h1 { font-size: 4em; }
-h2 { font-size: 2em; }
-h3 { font-size: 1.6em; }
+h1 { font-size: 3em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
 .footnote {
     position: absolute;
     bottom: 3em;
@@ -29,7 +29,7 @@ code {
     -web-border-radius: 5px;
     background: #e7e8e2;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 25px;
 }
 .pull-left {
     float: left;
@@ -107,7 +107,7 @@ code {
 .right-column {
     width: 75%;
     float: right;
-    padding-top: 2em;
+    padding-top: 1em;
 }
 
 .large-image img {
@@ -139,4 +139,8 @@ code {
     border: 2px solid #faebcc;
     padding: 0.5em;
     font-size: 20px;
+}
+
+.remark-slide .remark-slide-content {
+  padding: .2em 1.5em;
 }

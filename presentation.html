@@ -14,10 +14,10 @@ layout: true
 class: center, middle, inverse
 ---
 #AngularJS
-Framework for Web Applications
+El framework para Aplicaciones Web
 .footnote[[angularjs.org](http://angularjs.org)]
 ---
-## Web History
+## Algo de Historia...
 ---
 layout: false
 .left-column[
@@ -28,8 +28,8 @@ layout: false
 ```xml
 <html>
   <body>
-    <h1>Mattias homepage</h1>
-    <p>Welcome to my homepage</p>
+    <h1>Reyesoft homepage</h1>
+    <p>Welcome to our page</p>
   </body>
 </html>
 ```
@@ -40,25 +40,16 @@ layout: false
   ## Generated pages
 ]
 .right-column[
-### perl
-
-```perl
-$name = "Mattias";
-print "<html>";
-print "<body>";
-print "<h1>$name homepage</h1>";
-print "<p>Welcome to my homepage</p>";
-print "</body>";
-print "</html>";
-```
-
 ### php
 
 ```php
 <html>
 <body>
-<h1><?php $name="Mattias"; echo $name ?> homepage</h1>
-<p>Welcome to my homepage</p>
+<h1><?php
+  $company="Reyesoft";
+  echo $company;
+  ?> homepage</h1>
+<p>Welcome to our page</p>
 </body>
 </html>
 ```
@@ -74,16 +65,17 @@ print "</html>";
 <html>
 <body>
 <h1></h1>
-<p>Welcome to my homepage</p>
+<p>Welcome to our page</p>
 <script>
-    h1 = document.getElementsByTagName("h1")[0];
-    h1.innerHTML = "Mattias Homepage";
+    h1 = document
+      .getElementsByTagName("h1")[0];
+    h1.innerHTML = "Reyesoft Company";
 </script>
 </body>
 </html>
 ```
-- DOM Manipulation
-- Browser compatibility problems!
+## DOM manipulation
+## Browser compatibility problems!
 ]
 ---
 .left-column[
@@ -97,16 +89,16 @@ print "</html>";
 <html>
 <body>
 <h1></h1>
-<p>Welcome to my homepage</p>
+<p>Welcome to our page</p>
 <script>
-    $("h1").innerHTML("Mattias Homepage");
+    $("h1").innerHTML("Reyesoft Company");
 </script>
 </body>
 </html>
 ```
-- Powerful element selection
-- Browser compatibility handled by library
-- Same DOM manipulation
+## Powerful element selection
+## Browser compatibility handled by library
+## Same DOM manipulation
 
 ]
 ---
@@ -118,17 +110,23 @@ template: inverse
 ]
 ---
 
-## AngularJS
+# AngularJS
 
-- Developed by Google
-- Active project with large eco-system
-- Supports modern browsers
+##  Developed by Google
+## Active project with large eco-system
+## Supports modern browsers
 
 ---
 
-## MVC - Model View Controller
+## MVC - Modelo Vista Controllador
 .large-image[
   ![mvc](mvc2.png)
+]
+
+---
+
+.large-image[
+  ![mvc](databinding.png)
 ]
 
 ---
@@ -137,13 +135,13 @@ template: inverse
 ]
 .right-column[
 
-Entire model contained in a single javascript data structure.
+Todo el modelo contenido en una sola estructura de datos.
 
 ```javascript
-        $scope = {
-           employeeName: "Mattias",
-           company: "Net Insight AB"
-        }
+    $scope = {
+       employeeName: "Pablo",
+       company: "Reyesoft"
+    }
 ```
 ]
 
@@ -153,24 +151,25 @@ Entire model contained in a single javascript data structure.
   ## View
 ]
 .right-column[
-"Extended" html with references to model
+HTML "extendido" con referencias la modelo
 
 ```html
 <h2>{{company}}</h2>
 Employee name:
-<input ng-model="employeeName">
-</input>
-<button ng-click="save_info()">Submit</button>
+<input ng-model="employeeName" />
+<button ng-click="save_info()">
+  Submit
+</button>
 ```
-### Result
+### ↓↓↓
 
-.sample[
-<h2>Net Insight AB</h2>
+<big><big><big>.sample[
+<h2>Reyesoft</h2>
 Employee name:
-<input value="Mattias"></input>
+<input value="Pablo"></input>
 <button ng-click="save_info()">Submit</button>
 ]
-
+</big></big></big>
 ]
 
 ---
@@ -184,70 +183,23 @@ Javascript code that populates the view and reacts to changes in it.
 ```javascript
 function myCtrl( $scope ) {
   $scope = {
-     employeeName: "Mattias",
-     company: "Net Insight AB"
+     employeeName: "Pablo",
+     company: "Reyesoft"
   };
 
   $scope.save_info = function() {
-        console.log( $scope.employeeName );
+      alert($scope.employeeName);
   };
 }
 ```
 ]
 
----
-template: inverse
-name: example1
-
-# Example 1
-# Angular watches the model
-
----
-
-## Controller populates Model
-
-```javascript
-function MyCtrl( $scope ) {
-    $scope.name = "World";
-    $scope.Click = function() {
-        alert( "Hello " + $scope.name );
-    }
-}
-```
-
----
-
-## View
-
-```html
-<html ng-app>
-<head>
-  <link rel="stylesheet"
-    href="../bower_components/foundation/css/foundation.min.css">
-  <script src="../bower_components/angular/angular.min.js"></script>
-  <script src="ex1.js"></script>
-</head>
-
-<body ng-controller="MyCtrl">
-
-<div class="row">
-  <h1>{{name}}</h1>
-  <input type="text" ng-model="name">
-  <button ng-click="Click()">Click me</button>
-</div>
-
-</body>
-
-</html>
-```
-
-
-<a href="ex1/index.html" target="_blank">Result</a>
+<center><a href="ex1/index.html" target="_blank"><small>ejemplo</small>↗</a></center>
 
 ---
 template: inverse
 
-# Example 2
+## Otro ejemplo
 # json data via http
 
 ---
@@ -265,7 +217,8 @@ get "http://api.icndb.com/jokes/random"
    "type": "success",
    "value": {
       "id": 459,
-      "joke": "Chuck Norris can solve the Towers of Hanoi in one move.",
+      "joke": "Chuck Norris can solve the Towers
+                of Hanoi in one move.",
       "categories": ["nerdy"]
    }
 }
@@ -291,7 +244,7 @@ function MyCtrl( $scope, $http ) {
 
 ---
 
-# Template
+# View
 
 ```html
 <body ng-controller="MyCtrl">
@@ -301,15 +254,14 @@ function MyCtrl( $scope, $http ) {
     <button ng-click="FetchJoke()">Fetch joke</button>
 </div>
 ```
-
-<a href="ex2/index.html" target="_blank">Result</a>
+<center><a href="ex2/index.html" target="_blank"><small>ejemplo</small>↗</a></center>
 
 ---
 template: inverse
 name: example3
 
-# Example 3
-# Iterating through an array
+## Example 3
+# Trabajando con un array de datos
 
 ---
 
@@ -369,14 +321,37 @@ function MyCtrl( $scope, $http ) {
 </body>
 ```
 
-<a href="ex3/index.html" target="_blank">Result</a>
+<center><a href="ex3/index.html" target="_blank"><small>ejemplo</small>↗</a></center>
 
 ---
 
 template: inverse
 
-# Example 4
-# Showing stuff conditionally
+## Example 4
+# Contenido según condiciones
+
+---
+
+## View
+
+```html
+<body>
+  <h2>Conditional</h2>
+  Type 3 letters or more:
+  <input ng-model="unlocktext" />
+  <h2 ng-show="unlocktext.length > 3">
+    You have revealed the {{ unlocktext }}!
+  </h2>
+</body>
+```
+
+<center><a href="ex4/index.html" target="_blank"><small>ejemplo</small>↗</a></center>
+
+---
+
+.large-image[
+  ![mvc](mvc-mvw.png)
+]
 
 ---
 template: inverse
@@ -388,21 +363,45 @@ template: inverse
 ```
 
 ```html
-<div collapsable>This message can be collapsed</div>
+<div collapsable>Este mensaje se puede contraer</div>
 ```
 
-*Separation of concerns*
+*Separación de las responsabilidades*
+
+---
+
+## View
+
+```html
+<div ng-controller="AppCtrl" ng-app="MyApp">
+  <h1>md-datepicker directive</h1>
+  <md-content>
+    <md-datepicker ng-model="myDate" />
+  </md-content>
+</div>
+```
+
+## Controller
+
+```javascript
+MyApp.controller('AppCtrl', function($scope) {
+    $scope.myDate = new Date();
+  }
+);
+```
+
+<center><a href="ex5/index.html" target="_blank"><small>ejemplo</small>↗</a></center>
 
 ---
 template: inverse
 
-# Routes and views
+# Routes & Views
 
-Entire application on one page but the url changes
+Toda la aplicación en una sola página ¡pero la URL cambia!
 
 ---
 
-# Routes and views
+# Routes & views
 
 ```javascript
 .when("/ets/if/:interface/basic", {
@@ -416,116 +415,92 @@ Entire application on one page but the url changes
 <div ng-view></div>
 ```
 
-*Separation of concerns*
+*¡Separamos las responsabilidades!*
 
 ---
 template: inverse
 
 # Services
 
-Separate different parts of the codebase from each other using services
+Separamos partes del código según la tarea usando servicios
 
-*Separation of concerns*
+(Ex: DataRequest, LocalStorageManager, WikiParser)
+
+*¡Separamos las responsabilidades!*
 
 ---
-
 template: inverse
 
-# Testability
-
-Uses Dependency injection
-
-Includes mocks for core services
-
----
-
-template: inverse
-
-# Real world test
-
----
-
-## IP Interfaces Request
-
-```
-POST /data/oam
-```
-
-```javascript
-[
-  {
-    "root":    "ipconf.if.*",
-    "entries": "name address.0.inet? address.0.netmask? " +
-               "media.active media.current mtu"
-  }
+## Great tools
+.large-image[
+  ![gmail](tools.jpg)
 ]
-```
 ---
 
-## IP Interfaces Response
+## Typescript
 
-
-```javascript
-{
-"_success": true,
-"_errors": [],
-  "ipconf": {
-    "if": {
-      "0": {
-        "name": "eth-aux",
-        "address": {},
-        "media": {
-          "active": "link down",
-          "current": "autoselect"
-        },
-        "mtu": "1500"
-      },
-      "1": { ... }
-    }
-  }
-}
-```
-
-.panel[
-Response built by node **without understanding the contents of oam**
+.large-image[
+  ![mvc](ts.png)
 ]
 
----
-
-# Code size
-
-Current web: **172k** mostly minified js
-
-Webapp: **146k** minified js
-
-Can gzip compress down to one third.
-
-Data per page is a lot smaller with AngularJS.
+[ejemplo](https://goo.gl/WT9PHR)
 
 ---
 
-# Development Effort
+## Yeoman - npm, bower, gulp, bower
 
-- Powerful development and debugging environment
-- Quick turnaround time
-- Possible to write tests
-- Very little code
-- Fun!
+.large-image[
+  ![mvc](yeoman.png)
+]
+
+go to console...
 
 ---
+
+# Razones para ser Angulero
+
+- MVC fácil y bien realizado
+- Interface de usuario con HTML
+- El Data Model es un POJO (como JSON)
+- El comportamiento se maneja con directives
+- Filtros
+- La manipulación del DOM queda atrás
+- Servicios. Los controladores sólo manipulan el scope
+
+---
+
+# "De jQuery a Angular"
+
+- No diseñas el DOM para luego manipularlo
+- No compares jQuery con Angular
+- Piensa en términos de arquitectura (applicaciones no webpages)
+- Data binding
+- Dependency injection
+- Desarrollo en paralelo
+
+---
+
 name: last-page
 template: inverse
 
 ## More info:
 [angularjs.org](http://angularjs.org)
 
-Instruction videos on [egghead.io](http://egghead.io)
+Me ;)
 
-AngularJS Google+ group
+[@pablorsk](http://twitter.com/pablorsk)
 
-This presentation is available on
+¿Preguntas? :|
 
-https://github.com/mattiash/angular-presentation
+---
+
+# ¡Queremos más!
+
+- [Three way data binding](https://moviefire.firebaseapp.com/ngFire/app.html)
+
+.large-image[
+  ![mvc](firebase.png)
+]
 
     </textarea>
     <script src="http://gnab.github.com/remark/downloads/remark-0.5.9.min.js" type="text/javascript"></script>

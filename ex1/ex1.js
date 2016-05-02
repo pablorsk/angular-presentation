@@ -1,6 +1,7 @@
 function MyCtrl( $scope ) {
-    $scope.name = "World";
-    $scope.Click = function() {
-        alert( "Hello " + $scope.name );
+    $scope.employeeName = "Pablo";
+    $scope.company = "Reyesoft";
+    $scope.save_info = function() {
+        alert($scope.employeeName);
     }
 }

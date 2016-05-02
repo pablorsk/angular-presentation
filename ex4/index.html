@@ -2,16 +2,15 @@
 <head>
   <link rel="stylesheet" href="../bower_components/foundation/css/foundation.min.css">
   <script src="../bower_components/angular/angular.min.js"></script>
-  <script src="ex1.js"></script>
 </head>
-<body ng-controller="MyCtrl">
+<body>
   <div class="row">
-    <h2>{{company}}</h2>
-    Employee name:
-    <input ng-model="employeeName" />
-    <button ng-click="save_info()">
-      Submit
-    </button>
+    <h2>Conditional</h2>
+    Type 3 letters or more:
+    <input ng-model="unlocktext" />
+    <h2 ng-show="unlocktext.length > 3">
+      You have revealed the {{ unlocktext }}!
+    </h2>
   </div>
 </body>
 </html>
