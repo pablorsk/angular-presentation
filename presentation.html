@@ -17,6 +17,13 @@ class: center, middle, inverse
 El framework para Aplicaciones Web
 .footnote[[angularjs.org](http://angularjs.org)]
 ---
+#<pre>@pablorsk</pre>
+.footnote[[PabloReyes.com](http://pabloreyes.com)]
+---
+#AngularJS
+El framework para Aplicaciones Web
+.footnote[[angularjs.org](http://angularjs.org)]
+---
 ## Algo de Historia...
 ---
 layout: false
@@ -118,12 +125,7 @@ template: inverse
 
 ---
 
-## MVC - Modelo Vista Controllador
-.large-image[
-  ![mvc](mvc2.png)
-]
-
----
+## MVC (Modelo Vista Controllador) -> MVW
 
 .large-image[
   ![mvc](databinding.png)
@@ -247,8 +249,7 @@ function MyCtrl( $scope, $http ) {
 # View
 
 ```html
-<body ng-controller="MyCtrl">
-<div class="row">
+<div ng-controller="MyCtrl">
     <h1>Joke {{data.value.id}}</h1>
     <p>{{data.value.joke}}</p>
     <button ng-click="FetchJoke()">Fetch joke</button>
@@ -307,8 +308,7 @@ function MyCtrl( $scope, $http ) {
 ## View
 
 ```html
-<body ng-controller="MyCtrl">
-<div class="row">
+<div ng-controller="MyCtrl">
     <h1>Chuck Norris jokes</h1>
     <table>
         <tr ng-repeat="joke in data.value">
@@ -318,7 +318,6 @@ function MyCtrl( $scope, $http ) {
     </table>
     <button ng-click="FetchJokes()">Fetch jokes</button>
 </div>
-</body>
 ```
 
 <center><a href="ex3/index.html" target="_blank"><small>ejemplo</small>↗</a></center>
@@ -404,9 +403,9 @@ Toda la aplicación en una sola página ¡pero la URL cambia!
 # Routes & views
 
 ```javascript
-.when("/ets/if/:interface/basic", {
-    templateUrl: "ets.if.basic.tmpl.html",
-    controller: "EtsIfBasicCtrl",
+.when("/companies/suppliers/:supplier_id", {
+    templateUrl: "suppliers.html",
+    controller: "SuppliersCtrl",
 })
 
 ```
